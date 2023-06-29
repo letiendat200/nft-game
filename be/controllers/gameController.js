@@ -1,4 +1,4 @@
-const PRIVATE_KEY = '0x3c67c6c286d441c4fbcde9ceea2cd9de2c74d9b648d4a4736c344af7000f9873';
+const PRIVATE_KEY = //enter private key of account;
 const ethNetwork = 'https://data-seed-prebsc-1-s1.bnbchain.org:8545';
 const {Web3} = require("web3");
 const web3 = new Web3(new Web3.providers.HttpProvider(ethNetwork));
@@ -7,7 +7,7 @@ const gameController = {
     try {      
         const { userScore, compScore, walletAddress } = req.body;      
         if(userScore > compScore){  
-        const myAddress = '0x25d63530f6D7989dA3B99b4a61f2D3460c19e7c9' 
+        const myAddress = //enter account address 
         const nonce = await web3.eth.getTransactionCount(myAddress, 'latest');
         const gasPrice = await web3.eth.getGasPrice();        
         const transaction = {
