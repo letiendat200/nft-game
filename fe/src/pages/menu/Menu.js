@@ -136,6 +136,30 @@ function Menu() {
   {
     setClick(!click);
   }
+  const handleClickHome = () => 
+  {
+    setClick(!click);
+    document.location.href = forwarderOrigin;
+    
+  }
+  const handleClickGame = () => 
+  {
+    setClick(!click);
+    if(status !== 0)
+    {
+      document.location.href = forwarderOrigin+"/game";   
+    }
+    
+    
+  }
+  const handleClickAuction = () => 
+  {
+    setClick(!click);
+    if(status !== 0)
+    {
+      document.location.href = forwarderOrigin+"/aution";
+    }        
+  }
   const dispatch = useDispatch(connectActions);
   const {ethereum} = window;
 
@@ -163,8 +187,11 @@ function Menu() {
       if(accounts){
         dispatch(connectActions.updateStatusSignin());
       }
+      else{        
+        dispatch(connectActions.updateStatusSignout());
+      }
     }
-    else{
+    else{      
       dispatch(connectActions.updateStatusSignout());
     }
   }
@@ -172,8 +199,11 @@ function Menu() {
   useEffect(() => {
     connectWallet();
   },[])
-  if(status === 1){
-
+  if(status === 0){
+   
+    return (
+      <p>Help </p>
+    )
   }
   return (
     <>
@@ -184,17 +214,17 @@ function Menu() {
       <Navigation clicked={click}>
         <List>
         <li>
-            <ItemLink onClick={handleClick} to="/">
+            <ItemLink onClick={handleClickHome} >
               Home
             </ItemLink>
           </li>
           <li>
-            <ItemLink onClick={handleClick} to="/game">
+            <ItemLink onClick={handleClickGame} >
               Play Game
             </ItemLink>
           </li>
           <li>
-            <ItemLink onClick={handleClick} to="/auction">
+            <ItemLink onClick={handleClickAuction} >
               Auction House
             </ItemLink>
           </li>          

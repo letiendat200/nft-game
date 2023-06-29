@@ -1,30 +1,34 @@
 
 import "../bootstrap/dist/css/bootstrap.min.css";
-
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connectActions } from "../../Store/connect";
 
 
 function HomeScreen() {
+  
   const dispatch = useDispatch(connectActions);
   const {ethereum} = window;
-
-  const { status } = useSelector((state) => state?.connect);
-  console.log(ethereum.isConnected())
+ 
+  const checkConnection = async () =>{
+    if(ethereum.isConnected()){
+      dispatch(connectActions.updateStatusSignin());    
+    }
+    else{
+      dispatch(connectActions.updateStatusSignout()); 
+    }
+  }
   
-  if(ethereum.isConnected()){
-    dispatch(connectActions.updateStatusSignin());    
-  }
-  else{
-    dispatch(connectActions.updateStatusSignout()); 
-  }
-  console.log(status)
+  useEffect(() => {
+    checkConnection();
+  },[])
   
   return (
+    <>
     <h1>
-            Need to sign in to Metamask first!!!
+           You have signed in to Metamask
     </h1> 
+    </>
  )
   
 }
