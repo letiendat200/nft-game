@@ -13,11 +13,13 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.8.14",
     "@grpc/proto-loader": "^0.7.7",
+    "@metamask/sdk": "^0.3.3",
     "axios": "^1.4.0",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "erc20-contract-js": "^1.3.2",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "google-auth-library": "^8.7.0",
@@ -29,7 +31,7 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "redis": "^4.6.7",
-    "web3": "^4.0.1"
+    "web3": "^4.0.2"
   },
   "devDependencies": {
     "jest": "^29.5.0",
