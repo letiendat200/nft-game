@@ -21,13 +21,15 @@ export const ResultArea = () => {
   const rewardSystem = async (uscore,cscore) => {
     try {
       
-      if(round ==5 && uscore>cscore)
+      if(round ===5 && uscore>cscore)
       {
+        document.getElementById("playAgainButton").disabled = true;
+        setTimeout(function(){document.getElementById("playAgainButton").disabled = false;},5000);
         const accounts = await ethereum.request({ method: "eth_requestAccounts" });
         console.log(accounts[0]);
-        const reward = await gameService.sendReward(uscore,cscore);      
+        const reward = await gameService.sendReward(uscore,cscore,accounts[0]);      
         if (reward) {
-          console.log("We did it")
+          console.log(reward)
         }
       }            
     } catch (err) {
@@ -87,6 +89,7 @@ export const ResultArea = () => {
           {round === 5 && (
             <button
               className="bg-white border-0 text-dark rounded-3 px-3 py-2 fs-6 fw-medium"
+              id="playAgainButton"
               onClick={() => dispatch(gameActions.resetGame())}
             >
               Play Again
