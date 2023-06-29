@@ -9,10 +9,9 @@ ReactDOM.render(
   <Provider store={Store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ <App />}>
+        <Route path="*" element={ <App />}>
         </Route>
       </Routes>
-      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
