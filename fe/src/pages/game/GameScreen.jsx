@@ -8,7 +8,7 @@ function GameScreen() {
   
   const { status } = useSelector((state) => state?.game);
   return (
-    <div className="mw-100 min-vh-100 bg-dark py-4 overflow-hidden">
+    <div className="mw-100 min-vh-100 py-4 overflow-hidden">
       <Col sm={12}>
         <Row className="d-flex justify-content-center my-2">
           <Col md={6} xs={12}>

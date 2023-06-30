@@ -148,9 +148,15 @@ function Menu() {
     if(status !== 0)
     {
       document.location.href = forwarderOrigin+"/game";   
-    }
-    
-    
+    }    
+  }
+  const handleClickShop = () => 
+  {
+    setClick(!click);
+    if(status !== 0)
+    {
+      document.location.href = forwarderOrigin+"/shop";
+    }        
   }
   const handleClickAuction = () => 
   {
@@ -160,6 +166,7 @@ function Menu() {
       document.location.href = forwarderOrigin+"/aution";
     }        
   }
+
   const dispatch = useDispatch(connectActions);
   const {ethereum} = window;
 
@@ -213,7 +220,7 @@ function Menu() {
       <NavBackground clicked={click}>&nbsp;</NavBackground>       
       <Navigation clicked={click}>
         <List>
-        <li>
+          <li>
             <ItemLink onClick={handleClickHome} >
               Home
             </ItemLink>
@@ -224,10 +231,15 @@ function Menu() {
             </ItemLink>
           </li>
           <li>
+            <ItemLink onClick={handleClickShop} >
+              NFT Shop
+            </ItemLink>
+          </li>  
+          <li>
             <ItemLink onClick={handleClickAuction} >
               Auction House
             </ItemLink>
-          </li>          
+          </li>        
         </List>
       </Navigation>
     </>
