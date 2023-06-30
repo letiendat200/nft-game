@@ -3,8 +3,10 @@ import "./App.css" ;
 import GameScreen from './pages/game';
 import HomeScreen from "./pages/home";
 import WelcomeScreen from "./pages/welcome";
+import ShoppingScreen from "./pages/shop";
 import Menu from "./pages/menu/Menu";
 import { useSelector } from "react-redux";
+
 
 function App() {
   const { status } = useSelector((state) => state?.connect);
@@ -18,7 +20,8 @@ function App() {
         ):(
           <Routes>
             <Route path="/" element={<HomeScreen />}/>
-            <Route path="/game" element={<GameScreen />} />            
+            <Route path="/game" element={<GameScreen />} /> 
+            <Route path="/shop" element={<ShoppingScreen />}/>
           </Routes>
         )}   
     </>
