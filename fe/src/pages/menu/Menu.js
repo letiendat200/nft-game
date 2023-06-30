@@ -163,7 +163,7 @@ function Menu() {
     setClick(!click);
     if(status !== 0)
     {
-      document.location.href = forwarderOrigin+"/aution";
+      document.location.href = forwarderOrigin+"/auction";
     }        
   }
 
