@@ -1,10 +1,14 @@
 function WelcomeScreen() {
-return (
+  return (
     <>
-    <h1>
-           Make sure to sign in to Metamask first!!!
-    </h1> 
+      <div
+        style={{
+          backgroundImage: `url("https://realpython.com/python-rock-paper-scissors/")`,
+        }}
+      >
+        Wellcome to our GAME
+      </div>
     </>
- )
+  );
 }
- export default WelcomeScreen;
+export default WelcomeScreen;
